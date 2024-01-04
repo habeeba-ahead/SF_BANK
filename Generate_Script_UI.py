@@ -35,7 +35,7 @@ def generate_create_stg_table(md_file_path,abs_ddl_file_path,abs_log_file_path):
         table_comment = row['Table_Description']
         column_name = row['Column_Description'].upper().replace(' ','_')
         column_name = column_name.replace('INFORMATION','INFO').replace('DESCRIPTION','DESC')
-        column_comment = ' COMMENT =\'' + row['Column_Description'] + '\''
+        column_comment = ' COMMENT \'' + row['Column_Description'] + '\''
         data_type = row['Data_Type']
         if row['Nullable'] == 'Y':
             nullable = ''
@@ -101,7 +101,7 @@ def generate_create_raw_table(md_file_path,abs_ddl_file_path,abs_log_file_path):
         else:
             column_name = row['Column_Description'].upper().replace(' ','_')
             column_name = column_name.replace('INFORMATION','INFO').replace('DESCRIPTION','DESC')
-        column_comment = ' COMMENT =\'' + row['Column_Description'] + '\''
+        column_comment = ' COMMENT \'' + row['Column_Description'] + '\''
         data_type = row['Data_Type']
         if row['Nullable'] == 'Y':
             nullable = ''
